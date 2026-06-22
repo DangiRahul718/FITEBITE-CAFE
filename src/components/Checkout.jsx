@@ -62,7 +62,7 @@ export default function Checkout({ cart, setView, onCheckoutComplete, selectedGo
 
   // Generate unique sequential token FT1001, FT1002, FT1003 on mount
   useEffect(() => {
-    const lastTokenNum = parseInt(localStorage.getItem('fitebite_last_token') || '1000');
+    const lastTokenNum = parseInt(localStorage.getItem('fitbite_last_token') || '1000');
     const nextTokenNum = lastTokenNum + 1;
     setToken(`FT${nextTokenNum}`);
   }, []);
@@ -72,15 +72,15 @@ export default function Checkout({ cart, setView, onCheckoutComplete, selectedGo
     setError('');
 
     // Save token sequence number to localStorage so the next checkout increments
-    const lastTokenNum = parseInt(localStorage.getItem('fitebite_last_token') || '1000');
-    localStorage.setItem('fitebite_last_token', (lastTokenNum + 1).toString());
+    const lastTokenNum = parseInt(localStorage.getItem('fitbite_last_token') || '1000');
+    localStorage.setItem('fitbite_last_token', (lastTokenNum + 1).toString());
 
     // Generate WhatsApp Pre-filled message
     const itemsFormatted = cartEntries
       .map(item => `* ${item.name}${item.quantity > 1 ? ` (x${item.quantity})` : ''}`)
       .join('\n');
 
-    let message = `FiteBite Cafe Order\n\n`;
+    let message = `Fit Bite Cafe Order\n\n`;
     message += `Token: ${token}\n\n`;
     message += `Customer Name: ${name.trim() || 'Guest'}\n\n`;
     message += `Order Type: ${orderType}\n\n`;

@@ -129,7 +129,7 @@ export default function Hero({ setView }) {
                 marginBottom: '1rem',
                 fontFamily: 'var(--font-heading)'
               }}>
-                FiteBite <span className="grad-text-green">Cafe.</span>
+                Fit Bite <span className="grad-text-green">Cafe.</span>
               </h1>
               <h1 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
@@ -149,7 +149,7 @@ export default function Hero({ setView }) {
               maxWidth: '480px',
               lineHeight: 1.5
             }}>
-              Welcome to FiteBite Cafe — your premium fitness kitchen and luxury lounge. We serve freshly prepared, chef-crafted high-protein meals, sandwiches, pizzas, and shakes. Available daily for healthy dine-in and quick pickup.
+              Welcome to Fit Bite Cafe — your premium fitness kitchen and luxury lounge. We serve freshly prepared, chef-crafted high-protein meals, sandwiches, pizzas, and shakes. Available daily for healthy dine-in and quick pickup.
             </p>
 
             {/* Price Badge Highlight */}

@@ -8,7 +8,7 @@ const SLIDES = [
       name: 'Alexander V.',
       role: 'Staff Software Engineer',
       timeframe: '12-Week Transformation',
-      quote: '"FiteBite eliminated the cognitive load of tracking macros. Syncing meal logs directly to my Whoop dashboard helped me break my energy crashes and drop body fat while gaining muscle."',
+      quote: '"Fit Bite eliminated the cognitive load of tracking macros. Syncing meal logs directly to my Whoop dashboard helped me break my energy crashes and drop body fat while gaining muscle."',
       routine: 'Zen Salmon Bowl + Custom Carb-Deficit Bowls',
       metrics: [
         { label: 'Afternoon Energy Level', before: 30, after: 95, color: 'var(--accent)' },
@@ -19,7 +19,7 @@ const SLIDES = [
     },
     // Right: Community Voice
     testimonial: {
-      quote: "FiteBite is the first dining establishment that truly aligns with metabolic science. Their commitment to clean, non-inflammatory cooking oils and highly bioavailable ingredients is mathematically and culinarily remarkable.",
+      quote: "Fit Bite is the first dining establishment that truly aligns with metabolic science. Their commitment to clean, non-inflammatory cooking oils and highly bioavailable ingredients is mathematically and culinarily remarkable.",
       name: "Dr. Marcus H.",
       role: "Biochemist & Metabolic Researcher",
       rating: 5,
@@ -32,7 +32,7 @@ const SLIDES = [
       name: 'Sophia K.',
       role: 'Competitive Crossfit Athlete',
       timeframe: '8-Week Power Calibration',
-      quote: '"My recovery was lagging until I synced my training volumes with FiteBite\'s hyperprotein menu plans. My nitrogen levels stabilized, and muscle soreness dropped by 50%."',
+      quote: '"My recovery was lagging until I synced my training volumes with Fit Bite\'s hyperprotein menu plans. My nitrogen levels stabilized, and muscle soreness dropped by 50%."',
       routine: 'Hyperdrive Protein Plate + Keto Steak Frites',
       metrics: [
         { label: 'Physical Recovery Speed', before: 45, after: 90, color: 'var(--accent)' },
@@ -43,7 +43,7 @@ const SLIDES = [
     },
     // Right: Community Voice
     testimonial: {
-      quote: "Our training camp relies on FiteBite to deliver custom nutrient ratios daily. The integration with our wearable device outputs is a game-changer for our athletes' recovery speeds and cellular repair.",
+      quote: "Our training camp relies on Fit Bite to deliver custom nutrient ratios daily. The integration with our wearable device outputs is a game-changer for our athletes' recovery speeds and cellular repair.",
       name: "Elena R.",
       role: "Founder, Apex Athletics",
       rating: 5,
@@ -56,7 +56,7 @@ const SLIDES = [
       name: 'Marcus G.',
       role: 'Ventures Managing Director',
       timeframe: '6-Week Executive Reset',
-      quote: '"FiteBite eliminated my afternoon brain fog. Having clean, non-inflammatory macro meals delivered straight to my desk kept my cellular energy peak and glucose response perfectly stable."',
+      quote: '"Fit Bite eliminated my afternoon brain fog. Having clean, non-inflammatory macro meals delivered straight to my desk kept my cellular energy peak and glucose response perfectly stable."',
       routine: 'Zen Salmon Bowl + Custom High-Protein Salads',
       metrics: [
         { label: 'Afternoon Cognitive Focus', before: 40, after: 92, color: 'var(--accent)' },
@@ -67,7 +67,7 @@ const SLIDES = [
     },
     // Right: Community Voice
     testimonial: {
-      quote: "FiteBite is where I conduct all my executive meetings. Premium glassmorphic lounge design, culinary sophistication, and zero inflammatory fillers. No afternoon brain fog or energy dips.",
+      quote: "Fit Bite is where I conduct all my executive meetings. Premium glassmorphic lounge design, culinary sophistication, and zero inflammatory fillers. No afternoon brain fog or energy dips.",
       name: "Ryan D.",
       role: "Managing Partner, Apex Ventures",
       rating: 5,

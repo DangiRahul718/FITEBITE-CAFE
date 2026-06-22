@@ -104,7 +104,7 @@ export default function Contact() {
                 <div>
                   <h4 style={{ fontSize: '0.95rem', color: '#fff', fontWeight: 600 }}>Digital Relations</h4>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.1rem' }}>
-                    lounge@fitebitecafe.com
+                    lounge@fitbitecafe.com
                   </p>
                 </div>
               </div>
@@ -251,7 +251,7 @@ export default function Contact() {
                 {/* Location indicator flag */}
                 <g transform="translate(230, 140)">
                   <rect x="-10" y="-35" width="80" height="24" rx="6" fill="#07080a" stroke="var(--accent)" strokeWidth="1" />
-                  <text x="30" y="-19" fill="#fff" fontSize="8" fontWeight="800" textAnchor="middle" fontFamily="var(--font-heading)">FITEBITE HQ</text>
+                  <text x="30" y="-19" fill="#fff" fontSize="8" fontWeight="800" textAnchor="middle" fontFamily="var(--font-heading)">FIT BITE HQ</text>
                 </g>
               </svg>
 

@@ -66,7 +66,7 @@ export default function Header({ view, setView }) {
               gap: '0.4rem',
             }}
           >
-            <span style={{ color: '#fff' }}>FITE</span>
+            <span style={{ color: '#fff' }}>FIT</span>
             <span style={{ color: 'var(--accent)', textShadow: '0 0 10px rgba(0,255,127,0.3)' }}>BITE</span>
             <Sparkles size={16} className="text-glow" style={{ color: 'var(--accent)' }} />
           </a>

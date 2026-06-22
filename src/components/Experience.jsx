@@ -98,7 +98,7 @@ export default function Experience() {
           >
             <img
               src={cafeInterior}
-              alt="FiteBite Cozy Cafe Interior"
+              alt="Fit Bite Cozy Cafe Interior"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -139,7 +139,7 @@ export default function Experience() {
               letterSpacing: '0.1em',
               textTransform: 'uppercase'
             }}>
-              THE FITEBITE CONCEPT
+              THE FIT BITE CONCEPT
             </span>
             <h2 style={{
               fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
@@ -150,7 +150,7 @@ export default function Experience() {
               Healthy Food. Great Taste. Comfortable Space.
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', marginBottom: '1rem' }}>
-              FiteBite Cafe is a place where you can enjoy fresh food, high-protein meals, and a comfortable environment. Whether you're coming after a workout, meeting friends, or grabbing a quick meal, we focus on quality ingredients and great taste.
+              Fit Bite Cafe is a place where you can enjoy fresh food, high-protein meals, and a comfortable environment. Whether you're coming after a workout, meeting friends, or grabbing a quick meal, we focus on quality ingredients and great taste.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.8rem' }}>

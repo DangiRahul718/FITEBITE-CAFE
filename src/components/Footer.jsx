@@ -35,7 +35,7 @@ export default function Footer({ view, setView }) {
           gap: '2.5rem',
           marginBottom: '2.5rem'
         }}>
-          {/* COLUMN 1 — FiteBite */}
+          {/* COLUMN 1 — Fit Bite */}
           <div>
             <a
               href="#"
@@ -51,7 +51,7 @@ export default function Footer({ view, setView }) {
                 marginBottom: '0.75rem'
               }}
             >
-              <span style={{ color: '#fff' }}>FITE</span>
+              <span style={{ color: '#fff' }}>FIT</span>
               <span style={{ color: 'var(--accent)', textShadow: '0 0 8px rgba(0,255,127,0.3)' }}>BITE</span>
               <Sparkles size={14} style={{ color: 'var(--accent)' }} />
             </a>
@@ -168,7 +168,7 @@ export default function Footer({ view, setView }) {
           fontSize: '0.75rem',
           color: 'var(--text-muted)'
         }}>
-          <p>© 2026 FiteBite Cafe. All Rights Reserved.</p>
+          <p>© 2026 Fit Bite Cafe. All Rights Reserved.</p>
         </div>
       </div>
 

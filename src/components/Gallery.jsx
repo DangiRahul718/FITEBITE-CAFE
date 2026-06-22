@@ -8,12 +8,12 @@ import galleryBrand from '../assets/gallery_brand.jpg';
 import gallerySeating from '../assets/gallery_seating.jpg';
 
 const IMAGES = [
-  { id: 1, src: galleryInterior, title: 'Cafe Interior', tag: 'FITEBITE GALLERY', className: 'gallery-card-1' },
-  { id: 2, src: galleryDecor, title: 'Wall Decor & Ambience', tag: 'FITEBITE GALLERY', className: 'gallery-card-2' },
-  { id: 3, src: galleryEntrance, title: 'FiteBite Entrance', tag: 'FITEBITE GALLERY', className: 'gallery-card-3' },
-  { id: 4, src: galleryBrand, title: 'Brand Identity', tag: 'FITEBITE GALLERY', className: 'gallery-card-4' },
-  { id: 5, src: gallerySeating, title: 'Cafe Walkthrough', tag: 'FITEBITE GALLERY', className: 'gallery-card-5' },
-  { id: 6, src: galleryInterior, title: 'Seating Area', tag: 'FITEBITE GALLERY', className: 'gallery-card-6' }
+  { id: 1, src: galleryInterior, title: 'Cafe Interior', tag: 'FIT BITE GALLERY', className: 'gallery-card-1' },
+  { id: 2, src: galleryDecor, title: 'Wall Decor & Ambience', tag: 'FIT BITE GALLERY', className: 'gallery-card-2' },
+  { id: 3, src: galleryEntrance, title: 'Fit Bite Entrance', tag: 'FIT BITE GALLERY', className: 'gallery-card-3' },
+  { id: 4, src: galleryBrand, title: 'Brand Identity', tag: 'FIT BITE GALLERY', className: 'gallery-card-4' },
+  { id: 5, src: gallerySeating, title: 'Cafe Walkthrough', tag: 'FIT BITE GALLERY', className: 'gallery-card-5' },
+  { id: 6, src: galleryInterior, title: 'Seating Area', tag: 'FIT BITE GALLERY', className: 'gallery-card-6' }
 ];
 
 export default function Gallery() {
@@ -26,10 +26,10 @@ export default function Gallery() {
         {/* Title */}
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-            FITEBITE GALLERY
+            FIT BITE GALLERY
           </span>
           <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontFamily: 'var(--font-heading)', fontWeight: 800, marginTop: '0.5rem', marginBottom: '1.2rem' }}>
-            Inside FiteBite Cafe
+            Inside Fit Bite Cafe
           </h2>
           <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
             Take a look inside our cafe and experience the atmosphere, seating, food culture, and fitness-focused dining environment.
