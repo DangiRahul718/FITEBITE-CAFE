@@ -593,6 +593,18 @@ const SECTIONS = [
   'Maggie'
 ];
 
+const QUICK_ACCESS_ITEMS = [
+  { label: 'Beverages', targetType: 'category', targetId: 'Beverages', sectionMatch: 'Beverages' },
+  { label: 'Sandwich', targetType: 'category', targetId: 'Sandwich', sectionMatch: 'Sandwich' },
+  { label: 'Burgers', targetType: 'category', targetId: 'Burger', sectionMatch: 'Burger' },
+  { label: 'Snacks', targetType: 'category', targetId: 'French Fries', sectionMatch: 'French Fries' },
+  { label: 'Pizza', targetType: 'category', targetId: 'Pizza', sectionMatch: 'Pizza' },
+  { label: 'High Protein', targetType: 'category', targetId: 'High Protein Special', sectionMatch: 'High Protein Special' },
+  { label: 'Maggi', targetType: 'category', targetId: 'Maggie', sectionMatch: 'Maggie' },
+  { label: 'Protein Shake', targetType: 'item', targetId: 'menu-item-29', sectionMatch: 'High Protein Special', itemId: 29 },
+  { label: 'Combos', targetType: 'category', targetId: 'Combos', sectionMatch: 'Combos' }
+];
+
 export default function NutritionMenu({ cart, setCart, setView }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedMeal, setSelectedMeal] = useState(null);
@@ -600,11 +612,69 @@ export default function NutritionMenu({ cart, setCart, setView }) {
   const [showHighProteinOnly, setShowHighProteinOnly] = useState(false);
   const containerRef = useRef(null);
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-15% 0px -75% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          const matchedSection = SECTIONS.find(s => `category-sec-${s.replace(/\s+/g, '-')}` === sectionId);
+          if (matchedSection) {
+            setActiveCategory(matchedSection);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    SECTIONS.forEach(section => {
+      const el = document.getElementById(`category-sec-${section.replace(/\s+/g, '-')}`);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      SECTIONS.forEach(section => {
+        const el = document.getElementById(`category-sec-${section.replace(/\s+/g, '-')}`);
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, [searchQuery, showHighProteinOnly]);
+
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
     const targetElement = document.getElementById(`category-sec-${category.replace(/\s+/g, '-')}`);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleQuickAccessClick = (item) => {
+    if (item.targetType === 'category') {
+      const targetElement = document.getElementById(`category-sec-${item.targetId.replace(/\s+/g, '-')}`);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setActiveCategory(item.sectionMatch);
+      }
+    } else if (item.targetType === 'item') {
+      const targetElement = document.getElementById(item.targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setActiveCategory(item.sectionMatch);
+        const originalBorder = targetElement.style.borderColor;
+        const originalShadow = targetElement.style.boxShadow;
+        targetElement.style.borderColor = 'var(--accent)';
+        targetElement.style.boxShadow = '0 0 25px rgba(0, 255, 127, 0.3)';
+        setTimeout(() => {
+          targetElement.style.borderColor = originalBorder;
+          targetElement.style.boxShadow = originalShadow;
+        }, 1500);
+      }
     }
   };
 
@@ -736,6 +806,24 @@ export default function NutritionMenu({ cart, setCart, setView }) {
           </div>
         </div>
 
+        {/* Quick Access Menu Navigation */}
+        <div className="quick-access-nav-wrapper">
+          <div className="quick-access-nav">
+            {QUICK_ACCESS_ITEMS.map((item) => {
+              const isActive = activeCategory === item.sectionMatch;
+              return (
+                <button
+                  key={item.label}
+                  onClick={() => handleQuickAccessClick(item)}
+                  className={`quick-access-pill ${isActive ? 'active' : ''}`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Layout Grid (Left Sidebar, Right List) */}
         <div style={{
           display: 'grid',
@@ -807,7 +895,7 @@ export default function NutritionMenu({ cart, setCart, setView }) {
                 <div 
                   key={section} 
                   id={`category-sec-${section.replace(/\s+/g, '-')}`}
-                  style={{ scrollMarginTop: '110px' }}
+                  style={{ scrollMarginTop: '160px' }}
                 >
                   {/* Section Title */}
                   <h3 style={{
@@ -839,6 +927,7 @@ export default function NutritionMenu({ cart, setCart, setView }) {
                       return (
                         <div
                           key={meal.id}
+                          id={`menu-item-${meal.id}`}
                           onClick={() => setSelectedMeal(meal)}
                           className="glass-premium menu-item-row"
                           style={{
@@ -1323,6 +1412,56 @@ export default function NutritionMenu({ cart, setCart, setView }) {
         @keyframes slideUp {
           from { transform: translate(-50%, 100px); opacity: 0; }
           to { transform: translate(-50%, 0); opacity: 1; }
+        }
+        .quick-access-nav-wrapper {
+          position: sticky;
+          top: 72px;
+          z-index: 40;
+          background: #060709;
+          padding: 0.75rem 0.25rem;
+          margin-bottom: 2.5rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          transition: all 0.3s ease;
+        }
+        .quick-access-nav {
+          display: flex;
+          gap: 0.75rem;
+          overflow-x: auto;
+          scrollbar-width: none;
+          padding: 0.25rem 0.5rem;
+          -webkit-overflow-scrolling: touch;
+        }
+        .quick-access-nav::-webkit-scrollbar {
+          display: none;
+        }
+        .quick-access-pill {
+          flex-shrink: 0;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: var(--text-secondary);
+          padding: 0.6rem 1.25rem;
+          border-radius: 50px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-family: var(--font-sans);
+        }
+        .quick-access-pill:hover {
+          color: #fff;
+          border-color: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.05);
+        }
+        .quick-access-pill.active {
+          background: rgba(0, 255, 127, 0.1) !important;
+          border-color: var(--accent) !important;
+          color: var(--accent) !important;
+          box-shadow: 0 0 12px rgba(0, 255, 127, 0.2);
+        }
+        @media (max-width: 991px) {
+          .quick-access-nav-wrapper {
+            top: 68px;
+          }
         }
         .menu-search-input:focus {
           border-color: var(--accent) !important;

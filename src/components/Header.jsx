@@ -16,8 +16,7 @@ export default function Header({ view, setView }) {
   const navLinks = [
     { name: 'Experience', href: '#experience' },
     { name: 'Menu', href: '#menu' },
-    { name: 'Goals', href: '#goals' },
-    { name: 'Calculator', href: '#calculator' }
+    { name: 'Goals', href: '#goals' }
   ];
 
   const handleScrollTo = (e, targetId) => {

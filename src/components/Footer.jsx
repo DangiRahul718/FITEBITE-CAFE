@@ -112,7 +112,6 @@ export default function Footer({ view, setView }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.85rem' }}>
               <a href="#" onClick={(e) => handleScrollTo(e, '#root')} className="footer-link">Home</a>
               <a href="#menu" onClick={(e) => handleScrollTo(e, '#menu')} className="footer-link">Menu</a>
-              <a href="#calculator" onClick={(e) => handleScrollTo(e, '#calculator')} className="footer-link">BMI Calculator</a>
             </div>
           </div>
 

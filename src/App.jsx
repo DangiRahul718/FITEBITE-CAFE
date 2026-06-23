@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Experience from './components/Experience';
 import NutritionMenu from './components/NutritionMenu';
 import GoalMeals from './components/GoalMeals';
-import BmiCalculator from './components/BmiCalculator';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
@@ -144,7 +143,6 @@ export default function App() {
               <Hero setView={setView} />
               <Experience />
               <GoalMeals addMultipleToCart={addMultipleToCart} setView={setView} setSelectedGoal={setSelectedGoal} />
-              <BmiCalculator />
               <Gallery />
             </>
           )}

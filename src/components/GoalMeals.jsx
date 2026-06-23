@@ -71,7 +71,7 @@ const GOALS = [
 ];
 
 export default function GoalMeals({ addMultipleToCart, setView, setSelectedGoal }) {
-  const [selectedGoalId, setSelectedGoalId] = useState('weight-loss');
+  const [selectedGoalId, setSelectedGoalId] = useState(null);
   const [addedGoalId, setAddedGoalId] = useState(null);
 
   const getMealDetails = (itemIds) => {
@@ -144,7 +144,7 @@ export default function GoalMeals({ addMultipleToCart, setView, setSelectedGoal 
               <div
                 key={goal.id}
                 className={`glass-premium goal-card ${isSelected ? 'active' : ''}`}
-                onClick={() => setSelectedGoalId(goal.id)}
+                onClick={() => setSelectedGoalId(prev => prev === goal.id ? null : goal.id)}
                 style={{
                   borderRadius: '24px',
                   padding: '2.5rem 2rem',

@@ -4,16 +4,11 @@ import { ZoomIn, X } from 'lucide-react';
 import galleryInterior from '../assets/gallery_interior.jpg';
 import galleryDecor from '../assets/gallery_decor.png';
 import galleryEntrance from '../assets/gallery_entrance.jpg';
-import galleryBrand from '../assets/gallery_brand.jpg';
-import gallerySeating from '../assets/gallery_seating.jpg';
 
 const IMAGES = [
   { id: 1, src: galleryInterior, title: 'Cafe Interior', tag: 'FIT BITE GALLERY', className: 'gallery-card-1' },
   { id: 2, src: galleryDecor, title: 'Wall Decor & Ambience', tag: 'FIT BITE GALLERY', className: 'gallery-card-2' },
-  { id: 3, src: galleryEntrance, title: 'Fit Bite Entrance', tag: 'FIT BITE GALLERY', className: 'gallery-card-3' },
-  { id: 4, src: galleryBrand, title: 'Brand Identity', tag: 'FIT BITE GALLERY', className: 'gallery-card-4' },
-  { id: 5, src: gallerySeating, title: 'Cafe Walkthrough', tag: 'FIT BITE GALLERY', className: 'gallery-card-5' },
-  { id: 6, src: galleryInterior, title: 'Seating Area', tag: 'FIT BITE GALLERY', className: 'gallery-card-6' }
+  { id: 3, src: galleryEntrance, title: 'Fit Bite Entrance', tag: 'FIT BITE GALLERY', className: 'gallery-card-3' }
 ];
 
 export default function Gallery() {
@@ -196,21 +191,6 @@ export default function Gallery() {
           grid-row: span 1;
           height: 228px;
         }
-        .gallery-card-4 {
-          grid-column: span 3;
-          grid-row: span 1;
-          height: 280px;
-        }
-        .gallery-card-5 {
-          grid-column: span 1;
-          grid-row: span 1;
-          height: 240px;
-        }
-        .gallery-card-6 {
-          grid-column: span 2;
-          grid-row: span 1;
-          height: 240px;
-        }
 
         .gallery-item-card {
           opacity: 0;
@@ -221,9 +201,6 @@ export default function Gallery() {
         .gallery-card-1 { animation-delay: 0.1s; }
         .gallery-card-2 { animation-delay: 0.2s; }
         .gallery-card-3 { animation-delay: 0.3s; }
-        .gallery-card-4 { animation-delay: 0.4s; }
-        .gallery-card-5 { animation-delay: 0.5s; }
-        .gallery-card-6 { animation-delay: 0.6s; }
 
         @keyframes fadeInUp {
           to {
@@ -272,28 +249,13 @@ export default function Gallery() {
             grid-row: span 1;
             height: 190px;
           }
-          .gallery-card-4 {
-            grid-column: span 2;
-            grid-row: span 1;
-            height: 200px;
-          }
-          .gallery-card-5 {
-            grid-column: span 1;
-            grid-row: span 1;
-            height: 200px;
-          }
-          .gallery-card-6 {
-            grid-column: span 1;
-            grid-row: span 1;
-            height: 200px;
-          }
         }
         @media (max-width: 640px) {
           .gallery-grid {
             grid-template-columns: 1fr;
             gap: 1rem;
           }
-          .gallery-card-1, .gallery-card-2, .gallery-card-3, .gallery-card-4, .gallery-card-5, .gallery-card-6 {
+          .gallery-card-1, .gallery-card-2, .gallery-card-3 {
             grid-column: span 1 !important;
             grid-row: span 1 !important;
             height: 240px !important;
